@@ -1,0 +1,35 @@
+PODS:
+  - CocoaAsyncSocket (7.6.0)
+  - Suas (0.1.1)
+  - SuasMonitorMiddleware (0.1.0):
+    - CocoaAsyncSocket (= 7.6.0)
+    - Suas (= 0.1.1)
+
+DEPENDENCIES:
+  - Suas (from `https://github.com/zendesk/Suas-iOS/`, branch `removing-monitor-middleware`)
+  - SuasMonitorMiddleware (from `https://github.com/zendesk/SuasMonitorMiddleware/`, branch `master`)
+
+EXTERNAL SOURCES:
+  Suas:
+    :branch: removing-monitor-middleware
+    :git: https://github.com/zendesk/Suas-iOS/
+  SuasMonitorMiddleware:
+    :branch: master
+    :git: https://github.com/zendesk/SuasMonitorMiddleware/
+
+CHECKOUT OPTIONS:
+  Suas:
+    :commit: 6f18698584e9282f07f28f416323021c0d7ee317
+    :git: https://github.com/zendesk/Suas-iOS/
+  SuasMonitorMiddleware:
+    :commit: ec7752e86a2560d258b66b93d0caed92178050bd
+    :git: https://github.com/zendesk/SuasMonitorMiddleware/
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: b9d5589f07baf9de8f34cc25abd4fcba28f13805
+  Suas: 97431d9acced54b820eaafa96f516b7206af12a1
+  SuasMonitorMiddleware: 4dc4a790ec66c99b0985aa37a741cd1f8fd7241d
+
+PODFILE CHECKSUM: fcc5c1b2bfb3aa590ef281b574f50c90296caf95
+
+COCOAPODS: 1.1.1
