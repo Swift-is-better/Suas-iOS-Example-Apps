@@ -9,6 +9,6 @@ target 'TodoSampleApp' do
   use_frameworks!
 
   pod "Suas", :git => "https://github.com/zendesk/Suas-iOS", :branch => "master"
-  pod "SuasMonitorMiddleware", :git => "https://github.com/zendesk/Suas-Monitor-Middleware", :branch => "master"
+  pod "SuasMonitorMiddleware", :git => "https://github.com/zendesk/Suas-iOS-Monitor-Middleware", :branch => "master"
 
 end

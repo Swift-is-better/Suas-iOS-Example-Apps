@@ -22,7 +22,7 @@ CHECKOUT OPTIONS:
     :commit: 26376efb1e2d3178521970af917d720dfa585b57
     :git: https://github.com/zendesk/Suas-iOS
   SuasMonitorMiddleware:
-    :commit: 98d5df42cc48d6b358134f17e310fc66ff725b4b
+    :commit: 7aeca581667fed8f057810db7eccb84eb921874f
     :git: https://github.com/zendesk/Suas-iOS-Monitor-Middleware
 
 SPEC CHECKSUMS:
