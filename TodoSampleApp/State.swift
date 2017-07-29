@@ -16,7 +16,7 @@ import SuasMonitorMiddleware
     var isCompleted: Bool
   }
 
-  struct TodoState: SuasEncodable {
+  struct TodoItems: SuasEncodable {
     var todos: [Todo]
   }
 
@@ -34,7 +34,7 @@ import SuasMonitorMiddleware
     }
   }
 
-  struct TodoState: SuasEncodable {
+  struct TodoItems: SuasEncodable {
     var todos: [Todo]
 
     func toDictionary() -> [String : Any] {
