@@ -8,7 +8,7 @@ target 'TodoSampleApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod "Suas", "0.1.1"
-  pod "SuasMonitorMiddleware", "0.1.0"
+  pod "Suas", :git => "https://github.com/zendesk/Suas-iOS", :branch => "master"
+  pod "SuasMonitorMiddleware", :git => "https://github.com/zendesk/Suas-Monitor-Middleware", :branch => "master"
 
 end
