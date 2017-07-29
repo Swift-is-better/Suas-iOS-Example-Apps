@@ -7,7 +7,7 @@ PODS:
 
 DEPENDENCIES:
   - Suas (from `https://github.com/zendesk/Suas-iOS`, branch `master`)
-  - SuasMonitorMiddleware (from `https://github.com/zendesk/Suas-Monitor-Middleware`, branch `master`)
+  - SuasMonitorMiddleware (from `https://github.com/zendesk/Suas-iOS-Monitor-Middleware`, branch `master`)
 
 EXTERNAL SOURCES:
   Suas:
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/zendesk/Suas-iOS
   SuasMonitorMiddleware:
     :branch: master
-    :git: https://github.com/zendesk/Suas-Monitor-Middleware
+    :git: https://github.com/zendesk/Suas-iOS-Monitor-Middleware
 
 CHECKOUT OPTIONS:
   Suas:
@@ -23,13 +23,13 @@ CHECKOUT OPTIONS:
     :git: https://github.com/zendesk/Suas-iOS
   SuasMonitorMiddleware:
     :commit: 98d5df42cc48d6b358134f17e310fc66ff725b4b
-    :git: https://github.com/zendesk/Suas-Monitor-Middleware
+    :git: https://github.com/zendesk/Suas-iOS-Monitor-Middleware
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: b9d5589f07baf9de8f34cc25abd4fcba28f13805
   Suas: 97431d9acced54b820eaafa96f516b7206af12a1
   SuasMonitorMiddleware: 4dc4a790ec66c99b0985aa37a741cd1f8fd7241d
 
-PODFILE CHECKSUM: 3de70f0ea4f54eb3f23c0ca7e5d4276e79658da3
+PODFILE CHECKSUM: 0b7060a66c63c117503003c6ef4d92b4fa810145
 
 COCOAPODS: 1.1.1
