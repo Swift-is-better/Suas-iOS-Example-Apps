@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Suas:
-    :commit: a76a7a5d7052e13e8f830ade4c025701d93076ce
+    :commit: 001a424fac6b7bf117769978af2bfe52a0ebc21b
     :git: https://github.com/zendesk/Suas-iOS
   SuasMonitorMiddleware:
     :commit: 7aeca581667fed8f057810db7eccb84eb921874f
@@ -30,6 +30,6 @@ SPEC CHECKSUMS:
   Suas: 97431d9acced54b820eaafa96f516b7206af12a1
   SuasMonitorMiddleware: 4dc4a790ec66c99b0985aa37a741cd1f8fd7241d
 
-PODFILE CHECKSUM: 0b7060a66c63c117503003c6ef4d92b4fa810145
+PODFILE CHECKSUM: 51d90ae2641252796c1b58be696e1981e09031f7
 
 COCOAPODS: 1.1.1
