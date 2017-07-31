@@ -10,7 +10,8 @@ import UIKit
 import Suas
 import SuasMonitorMiddleware
 
-let store = Suas.createStore(reducer: todoReducer, middleware: MonitorMiddleware())
+let store = Suas.createStore(reducer: TodoReducer(),
+                             middleware: MonitorMiddleware() |> LoggerMiddleware())
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
     return true
   }
 }

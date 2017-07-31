@@ -15,7 +15,7 @@ class ViewController: UIViewController, Component {
   @IBOutlet weak var addTodoButton: UIButton!
   @IBOutlet weak var todoTableView: UITableView!
 
-  var state: TodoItems = todoReducer.initialState {
+  var state: TodoList = TodoReducer().initialState {
     didSet {
       todoTableView.reloadData()
     }
@@ -29,6 +29,10 @@ class ViewController: UIViewController, Component {
   @IBAction func addTodoTapped(_ sender: Any) {
     store.dispatch(action: AddTodo(text: todoTextField.text ?? ""))
     todoTextField.text = ""
+  }
+
+  @IBAction func editTapped(_ sender: Any) {
+    todoTableView.isEditing = !todoTableView.isEditing
   }
 }
 
@@ -48,7 +52,23 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     return state.todos.count
   }
 
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    store.dispatch(action: RemoveTodo(index: indexPath.row))
+  }
+
+  func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    store.dispatch(action: MoveTodo(from: sourceIndexPath.row, to: destinationIndexPath.row))
+  }
+
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     store.dispatch(action: ToggleTodo(index: indexPath.row))
+  }
+
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+
+  func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    return true
   }
 }

@@ -12,7 +12,23 @@ import SuasMonitorMiddleware
 
 struct AddTodo: Action, SuasEncodable {
   let text: String
+}
 
+struct RemoveTodo: Action, SuasEncodable {
+  let index: Int
+}
+
+struct MoveTodo: Action, SuasEncodable  {
+  let from: Int
+  let to: Int
+}
+
+struct ToggleTodo: Action, SuasEncodable {
+  let index: Int
+}
+
+
+extension AddTodo {
   func toDictionary() -> [String : Any] {
     return [
       "text": text
@@ -20,9 +36,24 @@ struct AddTodo: Action, SuasEncodable {
   }
 }
 
-struct ToggleTodo: Action, SuasEncodable {
-  let index: Int
+extension RemoveTodo {
+  func toDictionary() -> [String : Any] {
+    return [
+      "index": index
+    ]
+  }
+}
 
+extension MoveTodo {
+  func toDictionary() -> [String : Any] {
+    return [
+      "from": from,
+      "to": to
+    ]
+  }
+}
+
+extension ToggleTodo {
   func toDictionary() -> [String : Any] {
     return [
       "index": index

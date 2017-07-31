@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="98z-Yw-pOd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Suas_iOS_SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TodoSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ouY-FW-JYj">
-                                <rect key="frame" x="16" y="35" width="343" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ouY-FW-JYj">
+                                <rect key="frame" x="16" y="79" width="343" height="30"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j3A-Zc-Oge">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="30"/>
@@ -41,7 +41,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tg0-dj-PCP">
-                                <rect key="frame" x="16" y="77" width="343" height="590"/>
+                                <rect key="frame" x="0.0" y="121" width="375" height="546"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="f63-S5-Uag"/>
@@ -51,15 +51,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Tg0-dj-PCP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="3q6-G9-OYI"/>
+                            <constraint firstItem="Tg0-dj-PCP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3q6-G9-OYI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Tg0-dj-PCP" secondAttribute="bottom" id="3v0-bN-lk4"/>
                             <constraint firstItem="Tg0-dj-PCP" firstAttribute="top" secondItem="ouY-FW-JYj" secondAttribute="bottom" constant="12" id="6K3-DC-a2c"/>
                             <constraint firstItem="ouY-FW-JYj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7jY-JM-UUQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Tg0-dj-PCP" secondAttribute="trailing" id="XCq-0v-Tjc"/>
+                            <constraint firstAttribute="trailing" secondItem="Tg0-dj-PCP" secondAttribute="trailing" id="XCq-0v-Tjc"/>
                             <constraint firstItem="ouY-FW-JYj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="aUH-ah-Rjo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ouY-FW-JYj" secondAttribute="trailing" id="tal-uc-Chw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7Ru-7Q-NA8">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="QNe-s1-5C6">
+                            <connections>
+                                <action selector="editTapped:" destination="BYZ-38-t0r" id="EVK-5d-UUz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addTodoButton" destination="cFq-n3-Vbe" id="UJQ-nq-Ak8"/>
                         <outlet property="todoTableView" destination="Tg0-dj-PCP" id="czW-SM-AsX"/>
@@ -68,7 +75,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-361" y="125"/>
+            <point key="canvasLocation" x="388" y="124"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1OY-Rd-p1I">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="98z-Yw-pOd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KUl-tZ-HAg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PXv-ad-wuq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e4a-lL-p6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-361.60000000000002" y="124.13793103448276"/>
         </scene>
     </scenes>
 </document>

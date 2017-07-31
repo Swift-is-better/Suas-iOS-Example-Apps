@@ -11,18 +11,18 @@ import SuasMonitorMiddleware
 
 #if swift(>=4.0)
   // In swift 4 there is no need to implement `SuasEncodable` as `SuasEncodable` already implements `Encodable`
-  struct Todo: SuasEncodable {
+  struct TodoItem: SuasEncodable {
     var title: String
     var isCompleted: Bool
   }
 
-  struct TodoItems: SuasEncodable {
-    var todos: [Todo]
+  struct TodoList: SuasEncodable {
+    var todos: [TodoItem]
   }
 
 #else
 
-  struct Todo: SuasEncodable {
+  struct TodoItem: SuasEncodable {
     var title: String
     var isCompleted: Bool
 
@@ -34,8 +34,8 @@ import SuasMonitorMiddleware
     }
   }
 
-  struct TodoItems: SuasEncodable {
-    var todos: [Todo]
+  struct TodoList: SuasEncodable {
+    var todos: [TodoItem]
 
     func toDictionary() -> [String : Any] {
       return [

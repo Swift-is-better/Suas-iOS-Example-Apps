@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Suas:
-    :commit: 4b5f00e70fedb058a23ad0f39063a4f7bb7ec5d4
+    :commit: a76a7a5d7052e13e8f830ade4c025701d93076ce
     :git: https://github.com/zendesk/Suas-iOS
   SuasMonitorMiddleware:
     :commit: 7aeca581667fed8f057810db7eccb84eb921874f
