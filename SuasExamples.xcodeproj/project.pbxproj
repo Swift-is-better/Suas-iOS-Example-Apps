@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53A87A395A712462C796CC4A /* Pods_TodoAppExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE51D978BCB7E332C6DB45B7 /* Pods_TodoAppExample.framework */; };
 		69ECF51F480595D9A69CA2F1 /* Pods_AsyncActionExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC16542C1F9F813DEC88077 /* Pods_AsyncActionExample.framework */; };
 		86F3EA3BA5B781D12B241664 /* Pods_TodoSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE7416512695CF9DB07E09E /* Pods_TodoSampleApp.framework */; };
 		933C1C8D155B4DEB7C94E629 /* Pods_CounterExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0553BD2985B682517B0C2E2 /* Pods_CounterExample.framework */; };
@@ -31,12 +32,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0344F93B82DC706C4D40A3FD /* Pods-TodoAppExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodoAppExample/Pods-TodoAppExample.debug.xcconfig"; sourceTree = "<group>"; };
 		4BF654442294840CF26E6803 /* Pods-CounterExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CounterExample/Pods-CounterExample.debug.xcconfig"; sourceTree = "<group>"; };
 		4EC16542C1F9F813DEC88077 /* Pods_AsyncActionExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsyncActionExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BE7416512695CF9DB07E09E /* Pods_TodoSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62257240F1A38822DA9A1B76 /* Pods-TodoSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoSampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodoSampleApp/Pods-TodoSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7E5F27B6C3E4095A4C0FD366 /* Pods-CounterExample2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterExample2.release.xcconfig"; path = "Pods/Target Support Files/Pods-CounterExample2/Pods-CounterExample2.release.xcconfig"; sourceTree = "<group>"; };
+		8C40A5E68A418F5C71665A03 /* Pods_CounterExample2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CounterExample2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		905D8D69813351298EE2B653 /* Pods-CounterExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CounterExample/Pods-CounterExample.release.xcconfig"; sourceTree = "<group>"; };
 		AAA47563669B30876005F91F /* Pods-AsyncActionExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsyncActionExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AsyncActionExample/Pods-AsyncActionExample.debug.xcconfig"; sourceTree = "<group>"; };
+		ACA054F6DC33716914FA667C /* Pods-CounterExample2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CounterExample2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CounterExample2/Pods-CounterExample2.debug.xcconfig"; sourceTree = "<group>"; };
+		BE51D978BCB7E332C6DB45B7 /* Pods_TodoAppExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoAppExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C02CAD187A9E8B030B9278BE /* Pods-TodoAppExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoAppExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodoAppExample/Pods-TodoAppExample.release.xcconfig"; sourceTree = "<group>"; };
 		C82822D9BCC348C8A3A1AF25 /* Pods-AsyncActionExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsyncActionExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsyncActionExample/Pods-AsyncActionExample.release.xcconfig"; sourceTree = "<group>"; };
 		D0553BD2985B682517B0C2E2 /* Pods_CounterExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CounterExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CA295B3DC822B281F2C5CA /* Pods-TodoSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoSampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodoSampleApp/Pods-TodoSampleApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -57,7 +64,7 @@
 		D756032A1F2EB7A800ADD8CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D756032D1F2EB7A800ADD8CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D756032F1F2EB7A800ADD8CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D763D3FC1F268A5C00F04A28 /* TodoSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D763D3FC1F268A5C00F04A28 /* TodoAppExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoAppExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D763D3FF1F268A5C00F04A28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D763D4011F268A5C00F04A28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D763D4041F268A5C00F04A28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86F3EA3BA5B781D12B241664 /* Pods_TodoSampleApp.framework in Frameworks */,
+				53A87A395A712462C796CC4A /* Pods_TodoAppExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +111,10 @@
 				905D8D69813351298EE2B653 /* Pods-CounterExample.release.xcconfig */,
 				AAA47563669B30876005F91F /* Pods-AsyncActionExample.debug.xcconfig */,
 				C82822D9BCC348C8A3A1AF25 /* Pods-AsyncActionExample.release.xcconfig */,
+				ACA054F6DC33716914FA667C /* Pods-CounterExample2.debug.xcconfig */,
+				7E5F27B6C3E4095A4C0FD366 /* Pods-CounterExample2.release.xcconfig */,
+				0344F93B82DC706C4D40A3FD /* Pods-TodoAppExample.debug.xcconfig */,
+				C02CAD187A9E8B030B9278BE /* Pods-TodoAppExample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -113,6 +125,8 @@
 				5BE7416512695CF9DB07E09E /* Pods_TodoSampleApp.framework */,
 				D0553BD2985B682517B0C2E2 /* Pods_CounterExample.framework */,
 				4EC16542C1F9F813DEC88077 /* Pods_AsyncActionExample.framework */,
+				8C40A5E68A418F5C71665A03 /* Pods_CounterExample2.framework */,
+				BE51D978BCB7E332C6DB45B7 /* Pods_TodoAppExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,7 +160,7 @@
 		D763D3F31F268A5C00F04A28 = {
 			isa = PBXGroup;
 			children = (
-				D763D3FE1F268A5C00F04A28 /* TodoSampleApp */,
+				D763D3FE1F268A5C00F04A28 /* TodoAppExample */,
 				D75603221F2EB7A800ADD8CE /* CounterExample */,
 				D71C118E1F2F201B008C6A94 /* AsyncActionExample */,
 				D763D3FD1F268A5C00F04A28 /* Products */,
@@ -158,14 +172,14 @@
 		D763D3FD1F268A5C00F04A28 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D763D3FC1F268A5C00F04A28 /* TodoSampleApp.app */,
+				D763D3FC1F268A5C00F04A28 /* TodoAppExample.app */,
 				D75603211F2EB7A800ADD8CE /* CounterExample.app */,
 				D71C118D1F2F201B008C6A94 /* AsyncActionExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D763D3FE1F268A5C00F04A28 /* TodoSampleApp */ = {
+		D763D3FE1F268A5C00F04A28 /* TodoAppExample */ = {
 			isa = PBXGroup;
 			children = (
 				D723A3C61F268AC700DAFEE6 /* Actions.swift */,
@@ -178,7 +192,7 @@
 				D763D4081F268A5C00F04A28 /* LaunchScreen.storyboard */,
 				D763D40B1F268A5C00F04A28 /* Info.plist */,
 			);
-			path = TodoSampleApp;
+			path = TodoAppExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +238,9 @@
 			productReference = D75603211F2EB7A800ADD8CE /* CounterExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D763D3FB1F268A5C00F04A28 /* TodoSampleApp */ = {
+		D763D3FB1F268A5C00F04A28 /* TodoAppExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D763D40E1F268A5C00F04A28 /* Build configuration list for PBXNativeTarget "TodoSampleApp" */;
+			buildConfigurationList = D763D40E1F268A5C00F04A28 /* Build configuration list for PBXNativeTarget "TodoAppExample" */;
 			buildPhases = (
 				01A8A8F1DCC47B82E3282F4C /* [CP] Check Pods Manifest.lock */,
 				D763D3F81F268A5C00F04A28 /* Sources */,
@@ -239,9 +253,9 @@
 			);
 			dependencies = (
 			);
-			name = TodoSampleApp;
+			name = TodoAppExample;
 			productName = TodoSampleApp;
-			productReference = D763D3FC1F268A5C00F04A28 /* TodoSampleApp.app */;
+			productReference = D763D3FC1F268A5C00F04A28 /* TodoAppExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -278,7 +292,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D763D3FB1F268A5C00F04A28 /* TodoSampleApp */,
+				D763D3FB1F268A5C00F04A28 /* TodoAppExample */,
 				D75603201F2EB7A800ADD8CE /* CounterExample */,
 				D71C118C1F2F201B008C6A94 /* AsyncActionExample */,
 			);
@@ -346,7 +360,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodoSampleApp/Pods-TodoSampleApp-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodoAppExample/Pods-TodoAppExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		268550C4DE16CA324D740A7C /* [CP] Check Pods Manifest.lock */ = {
@@ -406,7 +420,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodoSampleApp/Pods-TodoSampleApp-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodoAppExample/Pods-TodoAppExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8FB75182F42EF06E6C6925CE /* [CP] Copy Pods Resources */ = {
@@ -548,6 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LJ39N47822;
 				INFOPLIST_FILE = AsyncActionExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nsomar.AsyncActionExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -563,6 +578,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LJ39N47822;
 				INFOPLIST_FILE = AsyncActionExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nsomar.AsyncActionExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -578,6 +594,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LJ39N47822;
 				INFOPLIST_FILE = CounterExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nsomar.CounterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -593,6 +610,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LJ39N47822;
 				INFOPLIST_FILE = CounterExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nsomar.CounterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -712,12 +730,12 @@
 		};
 		D763D40F1F268A5C00F04A28 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62257240F1A38822DA9A1B76 /* Pods-TodoSampleApp.debug.xcconfig */;
+			baseConfigurationReference = 0344F93B82DC706C4D40A3FD /* Pods-TodoAppExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LJ39N47822;
-				INFOPLIST_FILE = TodoSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				INFOPLIST_FILE = TodoAppExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nsomar.TodoSampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -728,12 +746,12 @@
 		};
 		D763D4101F268A5C00F04A28 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5CA295B3DC822B281F2C5CA /* Pods-TodoSampleApp.release.xcconfig */;
+			baseConfigurationReference = C02CAD187A9E8B030B9278BE /* Pods-TodoAppExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LJ39N47822;
-				INFOPLIST_FILE = TodoSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				INFOPLIST_FILE = TodoAppExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nsomar.TodoSampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -772,7 +790,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D763D40E1F268A5C00F04A28 /* Build configuration list for PBXNativeTarget "TodoSampleApp" */ = {
+		D763D40E1F268A5C00F04A28 /* Build configuration list for PBXNativeTarget "TodoAppExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D763D40F1F268A5C00F04A28 /* Debug */,

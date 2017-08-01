@@ -8,10 +8,18 @@
 
 import UIKit
 import Suas
+import SuasMonitorMiddleware
 
 
 //: ## First: We define our State.
-struct SearchCities {
+struct SearchCities: SuasEncodable {
+  func toDictionary() -> [String : Any] {
+    return [
+      "cities": cities
+    ]
+
+  }
+
   var cities: [String]
 }
 
@@ -34,8 +42,15 @@ struct FetchCityAsyncAction: AsyncAction {
   }
 }
 
-struct CitiesFetchedAction: Action {
+struct CitiesFetchedAction: Action, SuasEncodable {
   let cities: [String]
+
+  func toDictionary() -> [String : Any] {
+    return [
+      "cities": cities
+    ]
+
+  }
 }
 
 //: ## Third: Define the reducer
@@ -55,7 +70,8 @@ struct SearchCitiesReducer: Reducer {
 }
 
 //: ## Fourth: Create a store
-let store = Suas.createStore(reducer: SearchCitiesReducer(), middleware: AsyncMiddleware())
+let store = Suas.createStore(reducer: SearchCitiesReducer(),
+                             middleware: AsyncMiddleware() |> MonitorMiddleware())
 
 class ViewController: UIViewController {
 
@@ -64,14 +80,13 @@ class ViewController: UIViewController {
   @IBAction func textChanged(_ sender: Any) {
     let textField = sender as! UITextField
     store.dispatch(action: FetchCityAsyncAction(query: textField.text ?? ""))
-
-    store.addListener(withId: "1", stateKey: "SearchCities", type: SearchCities.self, if: { (old, new) in return true }, callback: { state in
-
-    })
-
-    store.addListener(withId: "1", stateKey: "SearchCities", type: SearchCities.self, callback: { state in
-
-    })
+//    store.addListener(withId: "1", stateKey: "SearchCities", type: SearchCities.self, if: { (old, new) in return true }, callback: { state in
+//
+//    })
+//
+//    store.addListener(withId: "1", stateKey: "SearchCities", type: SearchCities.self, callback: { state in
+//
+//    })
   }
 
   override func viewDidLoad() {
@@ -79,7 +94,9 @@ class ViewController: UIViewController {
     //: ## Finally: Use the store
 
     //: Add a listener to the store
-    store.addListener(withId: "1", type: SearchCities.self)  { state in
+    store.addListener(withId: "1",
+                      type: SearchCities.self,
+                      if: stateChangedFilter)  { state in
       self.resultTextView.text = state.cities.joined(separator: "\n")
     }
   }

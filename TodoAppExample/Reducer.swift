@@ -16,7 +16,6 @@ struct TodoSettings {
 
 struct TodoReducer: Reducer {
   var initialState = TodoList(todos: [])
-  var stateKey = "todos"
   func reduce(action: Action, state: TodoList) -> TodoList? {
 
     if let action = action as? AddTodo {

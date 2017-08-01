@@ -9,7 +9,7 @@
 import UIKit
 import Suas
 
-class ViewController: UIViewController, Component {
+class ViewController: UIViewController {
 
   @IBOutlet weak var todoTextField: UITextField!
   @IBOutlet weak var addTodoButton: UIButton!
@@ -23,7 +23,10 @@ class ViewController: UIViewController, Component {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    store.connect(component: self)
+
+    store.addListener(type: TodoList.self) { newState in
+      self.state = newState
+    }.linkLifeCycleTo(object: self)
   }
 
   @IBAction func addTodoTapped(_ sender: Any) {

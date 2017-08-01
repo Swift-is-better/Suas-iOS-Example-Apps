@@ -11,7 +11,7 @@ import Suas
 import SuasMonitorMiddleware
 
 let store = Suas.createStore(reducer: TodoReducer(),
-                             middleware: MonitorMiddleware() |> LoggerMiddleware())
+                             middleware: MonitorMiddleware() + LoggerMiddleware())
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
