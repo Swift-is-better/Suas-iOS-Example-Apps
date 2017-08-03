@@ -160,8 +160,8 @@
 		D763D3F31F268A5C00F04A28 = {
 			isa = PBXGroup;
 			children = (
-				D763D3FE1F268A5C00F04A28 /* TodoAppExample */,
 				D75603221F2EB7A800ADD8CE /* CounterExample */,
+				D763D3FE1F268A5C00F04A28 /* TodoAppExample */,
 				D71C118E1F2F201B008C6A94 /* AsyncActionExample */,
 				D763D3FD1F268A5C00F04A28 /* Products */,
 				2AB454D5AA297023CB28BD35 /* Pods */,
@@ -292,8 +292,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D763D3FB1F268A5C00F04A28 /* TodoAppExample */,
 				D75603201F2EB7A800ADD8CE /* CounterExample */,
+				D763D3FB1F268A5C00F04A28 /* TodoAppExample */,
 				D71C118C1F2F201B008C6A94 /* AsyncActionExample */,
 			);
 		};

@@ -8,56 +8,43 @@
 
 import UIKit
 import Suas
-import SuasMonitorMiddleware
 
 
 //: ## First: We define our State.
-struct SearchCities: SuasEncodable {
-  func toDictionary() -> [String : Any] {
-    return [
-      "cities": cities
-    ]
-
-  }
-
+struct SearchCities {
   var cities: [String]
 }
 
 
 //: ## Second: Define the action
 struct FetchCityAsyncAction: AsyncAction {
-  var executionBlock: (MiddlewareAPI) -> ()
+  let query: String
 
   init(query: String) {
-    executionBlock = { api in
-      let url = URL(string: "https://autocomplete.wunderground.com/aq?query=\(query)")!
-      URLSession(configuration: .default).dataTask(with: url) { data, response, error in
-        let resp = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
-        let result = resp["RESULTS"] as! [[String: Any]]
+    self.query = query
+  }
 
-        let cities = result.map({ $0["name"] as! String })
-        api.dispatch(CitiesFetchedAction(cities: cities))
-        }.resume()
-    }
+  func onAction(getState: @escaping GetStateFunction, dispatch: @escaping DispatchFunction) {
+    let url = URL(string: "https://autocomplete.wunderground.com/aq?query=\(query)")!
+    URLSession(configuration: .default).dataTask(with: url) { data, response, error in
+      let resp = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+      let result = resp["RESULTS"] as! [[String: Any]]
+
+      let cities = result.map({ $0["name"] as! String })
+      dispatch(CitiesFetchedAction(cities: cities))
+    }.resume()
   }
 }
 
-struct CitiesFetchedAction: Action, SuasEncodable {
+struct CitiesFetchedAction: Action {
   let cities: [String]
-
-  func toDictionary() -> [String : Any] {
-    return [
-      "cities": cities
-    ]
-
-  }
 }
 
 //: ## Third: Define the reducer
 struct SearchCitiesReducer: Reducer {
   var initialState = SearchCities(cities: [])
 
-  func reduce(action: Action, state: SearchCities) -> SearchCities? {
+  func reduce(state: SearchCities, action: Action) -> SearchCities? {
 
     // Handle each action
     if let action = action as? CitiesFetchedAction {
@@ -71,33 +58,48 @@ struct SearchCitiesReducer: Reducer {
 
 //: ## Fourth: Create a store
 let store = Suas.createStore(reducer: SearchCitiesReducer(),
-                             middleware: AsyncMiddleware() |> MonitorMiddleware())
+                             middleware: AsyncMiddleware())
 
 class ViewController: UIViewController {
 
   @IBOutlet weak var resultTextView: UITextView!
+  var listenerSubscription: Subscription<SearchCities>?
 
   @IBAction func textChanged(_ sender: Any) {
     let textField = sender as! UITextField
+
     store.dispatch(action: FetchCityAsyncAction(query: textField.text ?? ""))
-//    store.addListener(withId: "1", stateKey: "SearchCities", type: SearchCities.self, if: { (old, new) in return true }, callback: { state in
-//
-//    })
-//
-//    store.addListener(withId: "1", stateKey: "SearchCities", type: SearchCities.self, callback: { state in
-//
-//    })
+
+    // Alternatively, you can use `URLSessionAsyncAction` to perform an async URLSession Action
+    /*
+    let url = URL(string: "https://autocomplete.wunderground.com/aq?query=\(textField.text ?? "")")!
+    let action = URLSessionAsyncAction(url: url) { data, _, _, dispatch in
+      let resp = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+      let result = resp["RESULTS"] as! [[String: Any]]
+    
+      let cities = result.map({ $0["name"] as! String })
+      dispatch(CitiesFetchedAction(cities: cities))
+    }
+    
+    store.dispatch(action: action)
+    */
+
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    //: ## Finally: Use the store
+    //: ## Fifth: Use the store
 
     //: Add a listener to the store
-    store.addListener(withId: "1",
-                      type: SearchCities.self,
+    listenerSubscription = store.addListener(forStateType: SearchCities.self,
                       if: stateChangedFilter)  { state in
       self.resultTextView.text = state.cities.joined(separator: "\n")
     }
+  }
+
+  deinit {
+    //: ## Finally: Use the store
+    // Remove the listener
+    listenerSubscription?.removeListener()
   }
 }

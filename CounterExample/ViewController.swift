@@ -39,7 +39,7 @@ struct DecrementAction: Action {
 //: PS: for unknown actions the reducer returns nil. Signifing that the state did not change
 //: PPS: You can define a reducer in 2 ways. `BlockReducer` to define a reducer inline.
 //: Or by implementing the `Reducer` protocol.
-let counterReducer = BlockReducer(state: Counter(value: 0)) { action, state in
+let counterReducer = BlockReducer(initialState: Counter(value: 0)) { state, action in
   
   // Handle each action
   if let action = action as? IncrementAction {
@@ -64,15 +64,7 @@ let store = Suas.createStore(reducer: counterReducer, middleware: LoggerMiddlewa
 
 class ViewController: UIViewController {
   @IBOutlet weak var counterLabel: UILabel!
-  
-  @IBAction func incrementTapped(_ sender: Any) {
-    //: Dispatch actions to the store
-    store.dispatch(action: IncrementAction(incrementValue: 1))
-  }
-  
-  @IBAction func decrementTapped(_ sender: Any) {
-    store.dispatch(action: DecrementAction(decrementValue: 1))
-  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
     //: ## Finally: Use the store
@@ -80,9 +72,23 @@ class ViewController: UIViewController {
     self.counterLabel.text = "\(store.state.value(forKeyOfType: Counter.self)!.value)"
     
     //: Add a listener to the store
-    store.addListener(withId: "1", type: Counter.self)  { state in
+    let subscription = store.addListener(forStateType: Counter.self)  { state in
       self.counterLabel.text = "\(state.value)"
     }
+
+    // When this object is deallocated, the listener will be removed
+    // Alternatively, you have to delete it by hand `subscription.removeListener()`
+    subscription.linkLifeCycleTo(object: self)
+  }
+
+  @IBAction func incrementTapped(_ sender: Any) {
+    //: Dispatch actions to the store
+    store.dispatch(action: IncrementAction(incrementValue: 1))
+  }
+
+  @IBAction func decrementTapped(_ sender: Any) {
+    //: Dispatch actions to the store
+    store.dispatch(action: DecrementAction(decrementValue: 1))
   }
 }
 

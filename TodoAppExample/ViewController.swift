@@ -24,7 +24,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    store.addListener(type: TodoList.self) { newState in
+    store.addListener(forStateType: TodoList.self) { newState in
       self.state = newState
     }.linkLifeCycleTo(object: self)
   }
