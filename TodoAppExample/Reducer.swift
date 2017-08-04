@@ -9,10 +9,6 @@
 import Foundation
 import Suas
 
-struct TodoSettings {
-  var backgroundColor: UIColor
-  var textColor: UIColor
-}
 
 struct TodoReducer: Reducer {
   var initialState = TodoList(todos: [])

@@ -19,3 +19,8 @@ target 'AsyncActionExample' do
   use_frameworks!
   pod "Suas", :git => "https://github.com/zendesk/Suas-iOS", :branch => "master"
 end
+
+target 'TodoAppWithSettingsExample' do
+  use_frameworks!
+  pod "Suas", :git => "https://github.com/zendesk/Suas-iOS", :branch => "master"
+end

@@ -72,8 +72,8 @@ class ViewController: UIViewController {
     self.counterLabel.text = "\(store.state.value(forKeyOfType: Counter.self)!.value)"
     
     //: Add a listener to the store
-    let subscription = store.addListener(forStateType: Counter.self)  { state in
-      self.counterLabel.text = "\(state.value)"
+    let subscription = store.addListener(forStateType: Counter.self)  { [weak self] state in
+      self?.counterLabel.text = "\(state.value)"
     }
 
     // When this object is deallocated, the listener will be removed
