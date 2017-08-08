@@ -29,7 +29,9 @@ struct TodoListControllerSettings {
   var todoString: String
 }
 
+// StateSelector that selects and creates a TodoListControllerSettings from the store full state
 let todoListControllorStateSelector: StateSelector<TodoListControllerSettings> = { state in
+  // Get state values from the store
   guard
     let todoList = state.value(forKeyOfType: TodoList.self),
     let settings = state.value(forKeyOfType: TodoSettings.self) else {
@@ -74,6 +76,7 @@ struct TodoReducer: Reducer {
       return TodoList(todos: state.todos + [action.content])
     }
 
+    // nil if state is not changed
     return nil
   }
 }
@@ -94,6 +97,7 @@ struct SettingsReducer: Reducer {
       return TodoSettings(backgroundColor: state.backgroundColor, textColor: action.color)
     }
 
+    // nil if state is not changed
     return nil
   }
 }

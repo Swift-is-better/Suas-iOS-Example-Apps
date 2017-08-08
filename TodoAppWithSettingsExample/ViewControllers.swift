@@ -15,7 +15,11 @@ class TodoViewController: UIViewController {
 
   override func viewDidLoad() {
 
+    // add a listener with `todoListControllorStateSelector` state Selector
+    // Selector will try to select and create a TodoListControllerSettings from the Store state
+    // Notice: we use [weak self] to prevent retain cycles
     let subscription = store.addListener(stateSelector: todoListControllorStateSelector) { [weak self] state in
+      // Update the UI
       self?.todoItemsTextView.text = state.todoString
       self?.todoItemsTextView.textColor = state.textColor
       self?.todoItemsTextView.backgroundColor = state.backgroundColor
@@ -38,6 +42,7 @@ class TodoViewController: UIViewController {
   }
 
   @IBAction func addTapped(_ sender: Any) {
+    // Dispatch actions
     store.dispatch(action: AddTodoAction(content: todoTextField.text ?? ""))
     todoTextField.text = ""
   }
@@ -51,13 +56,19 @@ class SettingsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
+    // Add a listener for states of `TodoSettings` type
+    // Notice: we use [weak self] to prevent retain cycles
     let subscription = store.addListener(forStateType: TodoSettings.self) { [weak self] state in
+      // Update UI
       self?.backgroundColorView.backgroundColor = state.backgroundColor
       self?.textColorView.backgroundColor = state.textColor
     }
 
     subscription.linkLifeCycleTo(object: self)
+
+    // Inform the UI with the current state
+    // Useful when entreing screen as we need the state value without triggering an action
     subscription.informWithCurrentState()
   }
 

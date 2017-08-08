@@ -17,6 +17,7 @@ class ViewController: UIViewController {
 
   var state: TodoList = TodoReducer().initialState {
     didSet {
+      // State change reload data
       todoTableView.reloadData()
     }
   }
@@ -24,12 +25,14 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    store.addListener(forStateType: TodoList.self) { newState in
-      self.state = newState
+    // Add store. [Weak self] to prevent retain cycles
+    store.addListener(forStateType: TodoList.self) { [weak self] newState in
+      self?.state = newState
     }.linkLifeCycleTo(object: self)
   }
 
   @IBAction func addTodoTapped(_ sender: Any) {
+    // Dispatch action
     store.dispatch(action: AddTodo(text: todoTextField.text ?? ""))
     todoTextField.text = ""
   }
@@ -39,6 +42,8 @@ class ViewController: UIViewController {
   }
 }
 
+
+// Table depends on state
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -10,13 +10,14 @@ import UIKit
 import Suas
 
 
-//: ## First: We define our State.
+// First: We define our State.
 struct SearchCities {
   var cities: [String]
 }
 
 
-//: ## Second: Define the action
+// Second: Define the action
+// This async action can be also performed with URLSessionAsyncAction provided from Suas
 struct FetchCityAsyncAction: AsyncAction {
   let query: String
 
@@ -24,13 +25,18 @@ struct FetchCityAsyncAction: AsyncAction {
     self.query = query
   }
 
-  func onAction(getState: @escaping GetStateFunction, dispatch: @escaping DispatchFunction) {
+  func execute(getState: @escaping GetStateFunction, dispatch: @escaping DispatchFunction) {
     let url = URL(string: "https://autocomplete.wunderground.com/aq?query=\(query)")!
+    // Perform async request
     URLSession(configuration: .default).dataTask(with: url) { data, response, error in
+
+      // When async request is done, dispatch actions
       let resp = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
       let result = resp["RESULTS"] as! [[String: Any]]
 
       let cities = result.map({ $0["name"] as! String })
+
+      // Dispatch action with parsed data
       dispatch(CitiesFetchedAction(cities: cities))
     }.resume()
   }
@@ -40,7 +46,7 @@ struct CitiesFetchedAction: Action {
   let cities: [String]
 }
 
-//: ## Third: Define the reducer
+// Third: Define the reducer
 struct SearchCitiesReducer: Reducer {
   var initialState = SearchCities(cities: [])
 
@@ -56,7 +62,8 @@ struct SearchCitiesReducer: Reducer {
   }
 }
 
-//: ## Fourth: Create a store
+// Fourth: Create a store
+// Notice we are using `AsyncMiddleware`
 let store = Suas.createStore(reducer: SearchCitiesReducer(),
                              middleware: AsyncMiddleware())
 
@@ -68,6 +75,7 @@ class ViewController: UIViewController {
   @IBAction func textChanged(_ sender: Any) {
     let textField = sender as! UITextField
 
+    // Dispatch the async action. This action will be intercepted and executed in the AsyncMiddleware
     store.dispatch(action: FetchCityAsyncAction(query: textField.text ?? ""))
 
     // Alternatively, you can use `URLSessionAsyncAction` to perform an async URLSession Action
@@ -88,17 +96,18 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    //: ## Fifth: Use the store
+    // Fifth: Use the store
 
-    //: Add a listener to the store
+    // Add a listener to the store
+    // We are using `stateChangedFilter` which will ensure the listener will be notified if the state with type `SearchCities` is changed
     listenerSubscription = store.addListener(forStateType: SearchCities.self,
-                      if: stateChangedFilter)  { state in
-      self.resultTextView.text = state.cities.joined(separator: "\n")
+                      if: stateChangedFilter)  { [weak self] state in
+      // Update UI
+      self?.resultTextView.text = state.cities.joined(separator: "\n")
     }
   }
 
   deinit {
-    //: ## Finally: Use the store
     // Remove the listener
     listenerSubscription?.removeListener()
   }

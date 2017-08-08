@@ -9,6 +9,8 @@
 import Foundation
 import SuasMonitorMiddleware
 
+// Define the state
+
 struct TodoItem: SuasEncodable {
   var title: String
   var isCompleted: Bool
@@ -18,10 +20,11 @@ struct TodoList: SuasEncodable {
   var todos: [TodoItem]
 }
 
-#if swift(>=4.0)
-  // In swift 4 there is no need to implement `SuasEncodable` as `SuasEncodable` already implements `Encodable`
+#if swift(>=3.2)
+  // In swift 3.2 there is no need to implement `SuasEncodable``toDictionary`.
+  // `SuasEncodable` already implements the `Encodable` protocol.
   //
-  // Just implement `SuasEncodable` and thats it, your types are ready to be sent to Suas monitor!
+  // Just implement `SuasEncodable` and thats it, no need to wrie any more code, your types are ready to be sent to Suas monitor!
 #else
 
   extension TodoItem {

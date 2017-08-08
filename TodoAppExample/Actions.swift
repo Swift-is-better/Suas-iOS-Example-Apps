@@ -10,6 +10,7 @@ import Foundation
 import Suas
 import SuasMonitorMiddleware
 
+// Defining the actions
 struct AddTodo: Action, SuasEncodable {
   let text: String
 }
@@ -28,10 +29,11 @@ struct ToggleTodo: Action, SuasEncodable {
 }
 
 
-#if swift(>=4.0)
-  // In swift 4 there is no need to implement `SuasEncodable` as `SuasEncodable` already implements `Encodable`
+#if swift(>=3.2)
+  // In swift 3.2 there is no need to implement `SuasEncodable``toDictionary`.
+  // `SuasEncodable` already implements the `Encodable` protocol.
   //
-  // Just implement `SuasEncodable` and thats it, your types are ready to be sent to Suas monitor!
+  // Just implement `SuasEncodable` and thats it, no need to wrie any more code, your types are ready to be sent to Suas monitor!
 #else
   extension AddTodo {
     func toDictionary() -> [String : Any] {

@@ -9,7 +9,7 @@
 import Foundation
 import Suas
 
-
+// Define reducers
 struct TodoReducer: Reducer {
   var initialState = TodoList(todos: [])
   
@@ -42,6 +42,7 @@ struct TodoReducer: Reducer {
       return newState
     }
 
+    // Return nil if state is unchanged
     return nil
   }
 
@@ -51,7 +52,7 @@ struct TodoReducer: Reducer {
 // Alternatively we can define the reducer using the `BlockReducer` struct
 // This is helpful when we want to define a reducer inline
 //
-//let todoReducer = BlockReducer(state: TodoList(todos:[])) { action, state in
+//let todoReducer = BlockReducer(state: TodoList(todos:[])) { state, action in
 //  if let action = action as? AddTodo {
 //    var newState = state
 //    newState.todos = newState.todos + [TodoItem(title: action.text, isCompleted: false)]
