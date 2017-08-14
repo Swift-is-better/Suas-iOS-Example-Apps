@@ -39,28 +39,54 @@ struct DecrementAction: Action {
 // PS: for unknown actions the reducer returns nil. Signifing that the state did not change
 // PPS: You can define a reducer in 2 ways. `BlockReducer` to define a reducer inline.
 // Or by implementing the `Reducer` protocol.
-let counterReducer = BlockReducer(initialState: Counter(value: 0)) { state, action in
-  
-  // Handle each action
-  if let action = action as? IncrementAction {
-    var newState = state
-    newState.value += action.incrementValue
-    return newState
+struct CounterReducer: Reducer {
+
+  var initialState = Counter(value: 0)
+
+  func reduce(state: CounterReducer.StateType, action: Action) -> CounterReducer.StateType? {
+    // Handle each action
+    if let action = action as? IncrementAction {
+      var newState = state
+      newState.value += action.incrementValue
+      return newState
+    }
+
+    if let action = action as? DecrementAction {
+      var newState = state
+      newState.value -= action.decrementValue
+      return newState
+    }
+
+    // Important: If action does not affec the state, return ni
+    return nil
   }
-  
-  if let action = action as? DecrementAction {
-    var newState = state
-    newState.value -= action.decrementValue
-    return newState
-  }
-  
-  // Important: If action does not affec the state, return ni
-  return nil
+
 }
+
+// Alternatively you can use a block reducer
+//let counterReducer = BlockReducer(initialState: Counter(value: 0)) { state, action in
+//
+//  // Handle increment action
+//  if let action = action as? IncrementAction {
+//    var newState = state
+//    newState.value += action.incrementValue
+//    return newState
+//  }
+//
+//  // Handle decrement action
+//  if let action = action as? DecrementAction {
+//    var newState = state
+//    newState.value -= action.decrementValue
+//    return newState
+//  }
+//
+//  // Important: If action does not affec the state, return nil
+//  return nil
+//}
 
 // Fourth: Create a store
 // The store is the main item you will be dealing with in your application
-let store = Suas.createStore(reducer: counterReducer, middleware: LoggerMiddleware())
+let store = Suas.createStore(reducer: CounterReducer(), middleware: LoggerMiddleware())
 
 class ViewController: UIViewController {
   @IBOutlet weak var counterLabel: UILabel!

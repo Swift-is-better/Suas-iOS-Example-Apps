@@ -10,7 +10,6 @@
 		4DF7C7F23F24F514EF76CB8B /* Pods_TodoAppWithSettingsExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327463D1732D5F5CF8F089FB /* Pods_TodoAppWithSettingsExample.framework */; };
 		53A87A395A712462C796CC4A /* Pods_TodoAppExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE51D978BCB7E332C6DB45B7 /* Pods_TodoAppExample.framework */; };
 		69ECF51F480595D9A69CA2F1 /* Pods_AsyncActionExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC16542C1F9F813DEC88077 /* Pods_AsyncActionExample.framework */; };
-		86F3EA3BA5B781D12B241664 /* Pods_TodoSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE7416512695CF9DB07E09E /* Pods_TodoSampleApp.framework */; };
 		933C1C8D155B4DEB7C94E629 /* Pods_CounterExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0553BD2985B682517B0C2E2 /* Pods_CounterExample.framework */; };
 		D71C11901F2F201B008C6A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71C118F1F2F201B008C6A94 /* AppDelegate.swift */; };
 		D71C11921F2F201B008C6A94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71C11911F2F201B008C6A94 /* ViewController.swift */; };
@@ -112,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86F3EA3BA5B781D12B241664 /* Pods_TodoSampleApp.framework in Frameworks */,
 				53A87A395A712462C796CC4A /* Pods_TodoAppExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
