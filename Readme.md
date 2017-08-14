@@ -8,7 +8,7 @@
 
 # Suas iOS Example Apps
 
-This repository contans a list of applications built using [Suas](https://github.com/zendesk/Suas-iOS).
+This repository contains a list of applications built using [Suas](https://github.com/zendesk/Suas-iOS).
 
 # What is Suas
 
@@ -65,7 +65,7 @@ This example shows:
 
 # Using Suas monitor
 
-Some of the sample apps also uses [Suas Monitor middleware](https://github.com/zendesk/Suas-Monitor-Middleware) to send the state and actions to [Suas Monitor Desktop](https://travis-ci.com/zendesk/Suas-Monitor).
+Some of the sample apps also use [Suas Monitor middleware](https://github.com/zendesk/Suas-Monitor-Middleware) to send the state and actions to [Suas Monitor Desktop](https://travis-ci.com/zendesk/Suas-Monitor).
 
 <p align="center">
 <img src="http://i.imgur.com/QsbDsN7.gif" title="source: imgur.com" />
