@@ -30,20 +30,6 @@ Get the required dependencies using [CocoaPods](https://cocoapods.org/) using:
 pod install
 ```
 
-# Using Suas monitor
-
-Some of the sample apps also uses [Suas Monitor middleware](https://github.com/zendesk/Suas-Monitor-Middleware) to send the state and actions to [Suas Monitor Desktop](https://travis-ci.com/zendesk/Suas-Monitor).
-
-<p align="center">
-<img src="http://i.imgur.com/QsbDsN7.gif" title="source: imgur.com" />
-</p>
-
-Head to [Suas Monitor Desktop GitHub page](https://travis-ci.com/zendesk/Suas-Monitor) for installation instruction.
-
-After installing `Suas Monitor app` you can start visualizing your application state.
-
-Check [Suas Monitor and the MonitorMiddleware documentation](https://suas.readme.io/docs/monitor-middleware-monitor-js) page for more in-depth information.
-
 # Examples In This Repo
 
 This repo contains an Xcode project with 4 sample apps
@@ -75,6 +61,21 @@ This example shows:
 - How to create a store with multiple reducers.
 - How to listen to changes in multiple states.
 - How to use the [StateSelector](https://suas.readme.io/docs/using-the-stateconverter).
+
+
+# Using Suas monitor
+
+Some of the sample apps also uses [Suas Monitor middleware](https://github.com/zendesk/Suas-Monitor-Middleware) to send the state and actions to [Suas Monitor Desktop](https://travis-ci.com/zendesk/Suas-Monitor).
+
+<p align="center">
+<img src="http://i.imgur.com/QsbDsN7.gif" title="source: imgur.com" />
+</p>
+
+Head to [Suas Monitor Desktop GitHub page](https://travis-ci.com/zendesk/Suas-Monitor) for installation instruction.
+
+After installing `Suas Monitor app` you can start visualizing your application state.
+
+Check [Suas Monitor and the MonitorMiddleware documentation](https://suas.readme.io/docs/monitor-middleware-monitor-js) page for more in-depth information.
 
 # Where to go next
 
