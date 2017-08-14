@@ -1,35 +1,97 @@
-# Suas Todo App Sample
+<p align="center">
+<a href="http://imgur.com/a0IkBEX"><img src="http://i.imgur.com/a0IkBEX.png" title="source: imgur.com" /></a>
+</p>
+<p align="center">
+<a href="https://raw.githubusercontent.com/zendesk/Suas-iOS/master/LICENSE?token=AIff-oX-dNf-KBOKyXYPRP9yto5D246gks5ZlwP7wA%3D%3D"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License" /></a>
+<a href="https://gitter.im/SuasArch/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/SuasArch/Lobby" /></a>
+</p>
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/zendesk/Suas-iOS-Monitor-Middleware/master/LICENSE?token=AIff-kDKSQmf_ew8AM44Iwd4Blzo82kGks5ZlwTVwA%3D%3D)
-[![Join the chat at https://gitter.im/SuasArch/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/SuasArch/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Suas iOS Example Apps
 
-![](misc/screenshot.png)
+This repository contans a list of applications built using [Suas](https://github.com/zendesk/Suas-iOS).
 
-Todo sample app built using [Suas-iOS](https://github.com/zendesk/Suas-iOS). It also uses the [Monitor middleware](https://github.com/zendesk/Suas-Monitor-Middleware) to send the state to [Suas Monitor](https://travis-ci.com/zendesk/Suas-Monitor).
+# What is Suas
 
-Requirements:
-- Xcode 8+
-- Swift 3+
+[Suas](https://github.com/zendesk/Suas-iOS) is a [unidirectional data flow architecture](https://suas.readme.io/docs/why-unidirectional-architectures) implementation for iOS/macOS/tvOS/watchOS and Android heavily inspired by [Redux](http://redux.js.org). It provides an easy-to-use library that helps to create applications that are consistent, deterministic, and scalable.
 
-Install:
+Suas focuses on providing good developer experience and tooling such as [customizable logging](https://suas.readme.io/docs/logging-in-suas) and [state changes monitoring](https://suas.readme.io/docs/monitor-middleware-monitor-js).
+
+Join our [gitter chat channel](https://gitter.im/SuasArch/Lobby) for any questions. Or check [Suas documentatation website](https://suas.readme.io).
+
+# Requirements
+- Xcode 8 and above
+- [CocoaPods](https://cocoapods.org/) installed
+
+# Installation
+
+Get the required dependencies using [CocoaPods](https://cocoapods.org/) using:
 
 ```
 pod install
 ```
 
-Open the sample app and run it.
+# Using Suas monitor
 
-## Using Suas monitor
-![](misc/monitor.png)
+Some of the sample apps also uses [Suas Monitor middleware](https://github.com/zendesk/Suas-Monitor-Middleware) to send the state and actions to [Suas Monitor Desktop](https://travis-ci.com/zendesk/Suas-Monitor).
 
-- Download Suas monitor and open it
-- Run the app and select the device from the list of devices
+<p align="center">
+<img src="http://i.imgur.com/QsbDsN7.gif" title="source: imgur.com" />
+</p>
 
-## Examples In This Repo
+Head to [Suas Monitor Desktop GitHub page](https://travis-ci.com/zendesk/Suas-Monitor) for installation instruction.
 
-This repo contains an Xcode project with four different examples:
+After installing `Suas Monitor app` you can start visualizing your application state.
 
-### Counter Example
-Simplest application possible. The app consists of a counter that can be incremented and decremented by tappoing on UI buttons.
+Check [Suas Monitor and the MonitorMiddleware documentation](https://suas.readme.io/docs/monitor-middleware-monitor-js) page for more in-depth information.
 
-### TodoAppExample
+# Examples In This Repo
+
+This repo contains an Xcode project with 4 sample apps
+
+## Counter App Example
+Example application with a label that displays the counter values and two buttons to increment and decrement the counter.
+
+This example shows the simplest possible Suas application.
+
+## Todo App Example
+Example application that shows adding todo items and editing them; like removing and reordering items.
+
+This example shows multiple actions. And show how to consume the state in a table view.
+
+## Search Cities Example
+
+Example application that searches for a list of cities from the network.
+
+This example shows:
+- How to use [AsyncAction and AsyncMiddleware](https://suas.readme.io/docs/async-actions). 
+- How to populate the UI with state fetched from the n
+
+## Todo app with settings example
+
+Example application that contains two screens; todo screen that shows a list of todos, and settings screen that shows the application settings.
+
+This example shows:
+- How to model an app with [multiple states](https://suas.readme.io/docs/applications-with-multiple-decoupled-states) . 
+- How to create a store with multiple reducers.
+- How to listen to changes in multiple states.
+- How to use the [StateSelector](https://suas.readme.io/docs/using-the-stateconverter).
+
+# Where to go next
+
+To get more information about Suas:
+- Head to [Suas website](https://suas.readme.io/docs) for more in-depth knowledge about how to use Suas.
+- Check the [Suas API refrerence](https://zendesk.github.io/Suas-iOS/).
+- Read through how to use Suas by checking [some examples built with Suas](https://suas.readme.io/docs/list-of-examples).
+- Join the conversation on [Suas gitter channel](https://gitter.im/SuasArch/Lobby) or get in touch with the [people behind Suas](https://suas.readme.io/docs/contact-us).
+
+# Contributing
+
+We love any sort of contribution. From changing the internals of how Suas works, changing Suas methods and public API, changing readmes and [documentation topics](https://suas.readme.io). 
+
+Feel free to suggest changes on the GitHub repos or directly [in Saus gitter channel](https://gitter.im/SuasArch/Lobby).
+
+For reference check our [contributing](https://suas.readme.io/docs/contributing) guidelines.
+
+# Suas future
+
+To help craft Suas future releases, join us on [gitter channel](https://gitter.im/SuasArch/Lobby).
