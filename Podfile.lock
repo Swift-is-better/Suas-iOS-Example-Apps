@@ -1,8 +1,6 @@
 PODS:
-  - CocoaAsyncSocket (7.6.0)
   - Suas (0.1.1)
   - SuasMonitorMiddleware (0.1.0):
-    - CocoaAsyncSocket (= 7.6.0)
     - Suas (= 0.1.1)
 
 DEPENDENCIES:
@@ -19,16 +17,15 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Suas:
-    :commit: 49c0d602ecf25182d6e13782984407cb2e1fd7b0
+    :commit: 8f7b30b19a6c89adde2de0a465cef6d11d5d4edb
     :git: https://github.com/zendesk/Suas-iOS
   SuasMonitorMiddleware:
-    :commit: dd1733468b9dff7d1b702ff354fe851181f67658
+    :commit: 2f084daf47c3cdd330a7997e65c7ad01e9bedf98
     :git: https://github.com/zendesk/Suas-iOS-Monitor-Middleware
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: b9d5589f07baf9de8f34cc25abd4fcba28f13805
-  Suas: 97431d9acced54b820eaafa96f516b7206af12a1
-  SuasMonitorMiddleware: 4dc4a790ec66c99b0985aa37a741cd1f8fd7241d
+  Suas: fcc8a22a72472bf6a223d0a0ec7e0a24793a9b09
+  SuasMonitorMiddleware: fc4aaa23fda0cd1db9bde17cca493d70ad838062
 
 PODFILE CHECKSUM: 01eadff2dc9c0da8ea9561722aaf9939f347e132
 
