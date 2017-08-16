@@ -17,7 +17,7 @@ struct SearchCities {
 
 
 // Second: Define the action
-// This async action can be also performed with URLSessionAsyncAction provided from Suas
+// Check another sample implementation for URL Session AsyncAction here -> https://gist.github.com/nsomar/b47642d52b95b39fd9daddcd36aaf333
 struct FetchCityAsyncAction: AsyncAction {
   let query: String
 
@@ -78,20 +78,7 @@ class ViewController: UIViewController {
     // Dispatch the async action. This action will be intercepted and executed in the AsyncMiddleware
     store.dispatch(action: FetchCityAsyncAction(query: textField.text ?? ""))
 
-    // Alternatively, you can use `URLSessionAsyncAction` to perform an async URLSession Action
-    /*
-    let url = URL(string: "https://autocomplete.wunderground.com/aq?query=\(textField.text ?? "")")!
-    let action = URLSessionAsyncAction(url: url) { data, _, _, dispatch in
-      let resp = try! JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
-      let result = resp["RESULTS"] as! [[String: Any]]
-    
-      let cities = result.map({ $0["name"] as! String })
-      dispatch(CitiesFetchedAction(cities: cities))
-    }
-    
-    store.dispatch(action: action)
-    */
-
+    // Alternatively, check another sample implementation for URL Session AsyncAction here -> https://gist.github.com/nsomar/b47642d52b95b39fd9daddcd36aaf333
   }
 
   override func viewDidLoad() {
