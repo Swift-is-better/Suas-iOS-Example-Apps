@@ -3,7 +3,7 @@
 //  TodoAppWithSettingsExample
 //
 //  Created by Omar Abdelhafith on 03/08/2017.
-//  Copyright © 2017 Omar Abdelhafith. All rights reserved.
+//  Copyright © 2017 Zendesk. All rights reserved.
 //
 
 import UIKit
