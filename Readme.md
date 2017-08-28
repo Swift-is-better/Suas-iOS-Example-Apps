@@ -6,6 +6,8 @@
 <a href="https://gitter.im/SuasArch/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/SuasArch/Lobby" /></a>
 </p>
 
+[![Analytics](https://ga-beacon.appspot.com/UA-105410314-2/github/Suas-iOS-Example-Apps?pixel)](https://github.com/zendesk/Suas-iOS-Example-Apps)
+
 # Suas iOS Example Apps
 
 This repository contains a list of applications built using [Suas](https://github.com/zendesk/Suas-iOS).
